@@ -1,0 +1,71 @@
+BACKUP ~AceAltMusic/backup~
+AUTHOR ~theacefes (bohdi2185@msn.com)~
+README ~AceAltMusic/Readme-AceAltMusic.html~
+
+BEGIN ~BGII Alternate Soundtrack~
+
+OUTER_SET "all_music" = 1
+
+ACTION_IF (FILE_EXISTS ~AceAltMusic/acm/MX0020A.acm~) THEN BEGIN
+  COPY ~AceAltMusic/acm/MX0020A.acm~  ~music/MX0020~ // City Gates
+END ELSE BEGIN
+  OUTER_SET "all_music" = 0
+END
+
+ACTION_IF (FILE_EXISTS ~AceAltMusic/acm/MX0300A.acm~) THEN BEGIN
+  COPY ~AceAltMusic/acm/MX0300A.acm~  ~music/MX0300~  // Docks
+END ELSE BEGIN
+  OUTER_SET "all_music" = 0
+END
+
+ACTION_IF (FILE_EXISTS ~AceAltMusic/acm/MX0400A.acm~) THEN BEGIN
+  COPY ~AceAltMusic/acm/MX0400A.acm~  ~music/MX0400~  // Slums
+END ELSE BEGIN
+  OUTER_SET "all_music" = 0
+END
+
+ACTION_IF (FILE_EXISTS ~AceAltMusic/acm/MX0400NA.acm~) THEN BEGIN
+  COPY ~AceAltMusic/acm/MX0400NA.acm~ ~music/MX0400N~ // Slums, Night
+END ELSE BEGIN
+  OUTER_SET "all_music" = 0
+END
+
+ACTION_IF (FILE_EXISTS ~AceAltMusic/acm/MX0414A.acm~) THEN BEGIN
+  COPY ~AceAltMusic/acm/MX0414A.acm~  ~music/MX0414~  // Demon Plane in Planar Sphere
+END ELSE BEGIN
+  OUTER_SET "all_music" = 0
+END
+
+ACTION_IF (FILE_EXISTS ~AceAltMusic/acm/MX0512A.acm~) THEN BEGIN
+  COPY ~AceAltMusic/acm/MX0512A.acm~  ~music/MX0512~  // Temple of Helm
+END ELSE BEGIN
+  OUTER_SET "all_music" = 0
+END
+
+ACTION_IF (FILE_EXISTS ~AceAltMusic/acm/MX1100A.acm~) THEN BEGIN
+  COPY ~AceAltMusic/acm/MX1100A.acm~  ~music/MX1100~  // Umar Hills
+END ELSE BEGIN
+  OUTER_SET "all_music" = 0
+END
+
+ACTION_IF (FILE_EXISTS ~AceAltMusic/acm/MX1600A.acm~) THEN BEGIN
+  COPY ~AceAltMusic/acm/MX1600A.acm~  ~music/MX1600~  // Brynnlaw
+END ELSE BEGIN
+  OUTER_SET "all_music" = 0
+END
+
+ACTION_IF (FILE_EXISTS ~AceAltMusic/acm/MX2000A.acm~) THEN BEGIN
+  COPY ~AceAltMusic/acm/MX2000A.acm~  ~music/MX2000~  // Trademeet
+END ELSE BEGIN
+  OUTER_SET "all_music" = 0
+END
+
+ACTION_IF (FILE_EXISTS ~AceAltMusic/acm/MX2100A.acm~) THEN BEGIN
+  COPY ~AceAltMusic/acm/MX2100A.acm~  ~music/MX2100~  // Underdark
+END ELSE BEGIN
+  OUTER_SET "all_music" = 0
+END
+
+ACTION_IF ("%all_music%" = 0) THEN BEGIN
+  PRINT ~Warning: Not all music found. Download all packages and extract them into the AceAltMusic/acm directory.~
+END  
